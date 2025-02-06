@@ -127,6 +127,7 @@
 				document.getElementById("mySidepanel").style.width = "250px";
 			}*/
 	fetch("https://raw.githubusercontent.com/CrimsonDrakeOfGondolin/Wrathford/refs/heads/main/web/data/regions.xml")
+		const ID = element.querySelector('path').id; // Define ID here
     .then(response => response.text())
     .then(xmlString => {
         console.log("Raw XML Response:", xmlString); // Debugging line
