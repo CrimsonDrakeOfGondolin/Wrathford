@@ -126,26 +126,28 @@
 				document.getElementById("link").href = "#"+ID;
 				document.getElementById("mySidepanel").style.width = "250px";
 			}*/
-			function openNav(element) {
-			    const ID = element.querySelector('path').id;
-			    fetch("https://raw.githubusercontent.com/CrimsonDrakeOfGondolin/Wrathford/refs/heads/main/web/data/regions.xml")
-			        .then(response => response.text())
-			        .then(xmlString => {
-			            const parser = new DOMParser();
-			            const xml = parser.parseFromString(xmlString, "text/xml");
-			            const country = xml.querySelector(`region [id="${ID}"]`);
-			
-			            if (country) {
-			                document.getElementById("name").innerHTML = country.querySelector("name").textContent;
-			                document.getElementById("desc").innerHTML = country.querySelector("description").textContent;
-			                document.getElementById("link").href = country.querySelector("link").textContent;
-			                document.getElementById("mySidepanel").style.width = "250px";
-			            } else {
-			                console.warn("Country data not found for ID:", ID);
-			            }
-			        })
-			        .catch(error => console.error("Error loading XML:", error));
-			}
+			fetch("https://raw.githubusercontent.com/yourusername/repository/main/countries.xml")
+    .then(response => response.text())
+    .then(xmlString => {
+        console.log("Raw XML Response:", xmlString); // Debugging line
+
+        const parser = new DOMParser();
+        const xml = parser.parseFromString(xmlString, "text/xml");
+        console.log("Parsed XML:", xml); // Debugging line
+
+        const country = xml.querySelector(`region[id="${ID}"]`);
+        console.log("Selected Country:", country); // Debugging line
+
+        if (country) {
+            document.getElementById("name").innerHTML = country.querySelector("name").textContent;
+            document.getElementById("desc").innerHTML = country.querySelector("description").textContent;
+            document.getElementById("link").href = country.querySelector("link").textContent;
+            document.getElementById("mySidepanel").style.width = "250px";
+        } else {
+            console.warn("Country data not found for ID:", ID);
+        }
+    })
+    .catch(error => console.error("Error loading XML:", error));
 			
 			function closeNav() {
 				document.getElementById("mySidepanel").style.width = "0";
