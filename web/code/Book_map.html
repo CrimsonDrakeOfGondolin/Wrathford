@@ -133,7 +133,7 @@
 			        .then(xmlString => {
 			            const parser = new DOMParser();
 			            const xml = parser.parseFromString(xmlString, "text/xml");
-			            const country = xml.querySelector(`country[id="${ID}"]`);
+			            const country = xml.querySelector(`region [id="${ID}"]`);
 			
 			            if (country) {
 			                document.getElementById("name").innerHTML = country.querySelector("name").textContent;
