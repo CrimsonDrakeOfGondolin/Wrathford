@@ -117,14 +117,35 @@
 				const LMN = document.getElementById(ID);
 				LMN.scrollIntoView({ behavior: "smooth", block: "center", inline: "center" });
 			}
-			function openNav(element) {
+			/*function openNav(element) {
 				const ID  = element.querySelector('path').id;
 				const txt = element.querySelector('g').innerHTML;
 				document.getElementById("name").innerHTML = ID;
 				document.getElementById("desc").innerHTML = txt;
 				document.getElementById("link").href = "#"+ID;
 				document.getElementById("mySidepanel").style.width = "250px";
+			}*/
+			function openNav(element) {
+			    const ID = element.querySelector('path').id;
+			    fetch("https://raw.githubusercontent.com/CrimsonDrakeOfGondolin/Wrathford/refs/heads/main/web/data/regions.xml")
+			        .then(response => response.text())
+			        .then(xmlString => {
+			            const parser = new DOMParser();
+			            const xml = parser.parseFromString(xmlString, "text/xml");
+			            const country = xml.querySelector(`country[id="${ID}"]`);
+			
+			            if (country) {
+			                document.getElementById("name").innerHTML = country.querySelector("name").textContent;
+			                document.getElementById("desc").innerHTML = country.querySelector("description").textContent;
+			                document.getElementById("link").href = country.querySelector("link").textContent;
+			                document.getElementById("mySidepanel").style.width = "250px";
+			            } else {
+			                console.warn("Country data not found for ID:", ID);
+			            }
+			        })
+			        .catch(error => console.error("Error loading XML:", error));
 			}
+			
 			function closeNav() {
 				document.getElementById("mySidepanel").style.width = "0";
 			}
