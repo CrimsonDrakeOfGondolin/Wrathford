@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<regions>
+    <region id="Southern_Isles">
+        <name>Southern Isles</name>
+        <description>Volcanic archipelago composed of two groups of islands: The northern group, known as "The forsaken isles" due to past conflicts and cataclysmic events, are made up of four larger, eight lesser and dozens of minor islands, all of which are sparsely populated or outright uninhabited; The southern group is made of just two islands, the larger of which composes over 92% of the total landmass. With respect to the forsaken isles, the population of the sowntern two islands increases nearly a hundred-fold</description>
+        <link></link>
+    </region>
+    <region id="Lindia">
+        <name>Lindia</name>
+        <description>Lindia is the easternmost region of Vorimar</description>
+        <link></link>
+    </region>
+
+</regions>
