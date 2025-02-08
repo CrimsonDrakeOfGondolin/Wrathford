@@ -1,0 +1,32 @@
+path{
+  display:inline;
+  opacity:1;
+  fill:#eeeeee;
+  fill-opacity:0.15;
+  fill-rule:nonzero;
+  stroke:#000000;
+  stroke-width:0.5;
+  stroke-linecap:square;
+  stroke-linejoin:round;
+  stroke-miterlimit:4;
+  stroke-dasharray:none;
+  stroke-opacity:1;
+  paint-order:markers stroke fill;
+}
+path:hover{
+  fill: #ac263c;
+  fill-opacity:0.5;
+}
+svg{
+  position: absolute;
+  font-size: 18px;
+  top: 8px;
+  left: 8px;
+}
+img {
+  pointer-events: none;
+  user-select: none;
+}
+body {
+  background-color: slateGray;
+}
