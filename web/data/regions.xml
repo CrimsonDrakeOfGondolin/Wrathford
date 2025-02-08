@@ -10,5 +10,34 @@
         <description>Lindia is the easternmost region of Vorimar</description>
         <link></link>
     </region>
-
+    <region id="Vitraya">
+        <name>Vitraya</name>
+        <description></description>
+        <link></link>
+    </region>
+    <region id="Ostrymodia">
+        <name>Ostrymodia</name>
+        <description></description>
+        <link></link>
+    </region>
+    <region id="Hivita">
+        <name>Hivita</name>
+        <description></description>
+        <link></link>
+    </region>
+    <region id="Dunkalar">
+        <name>Dunkalar</name>
+        <description></description>
+        <link></link>
+    </region>
+    <region id="Krodelar">
+        <name>Krodelar</name>
+        <description></description>
+        <link></link>
+    </region>
+    <region id="Prudelar">
+        <name>Prudelar</name>
+        <description></description>
+        <link></link>
+    </region>
 </regions>
